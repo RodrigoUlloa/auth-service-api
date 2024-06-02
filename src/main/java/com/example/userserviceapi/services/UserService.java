@@ -1,8 +1,8 @@
-package services;
+package com.example.userserviceapi.services;
 
-import entitites.User;
+import com.example.userserviceapi.common.entitites.User;
 import org.springframework.stereotype.Service;
-import repositories.UserRepository;
+import com.example.userserviceapi.repositories.UserRepository;
 
 import java.util.Optional;
 
@@ -12,7 +12,7 @@ public class UserService {
 
     public UserService(UserRepository userRepository) {this.userRepository = userRepository;}
 
-    public User updateUser(User userRequest){
+    public User updateUser(String userId, User userRequest, User password){
         return Optional.of(userRequest)
                 .map(userRepository::save)
                 .orElseThrow(() -> new RuntimeException("Error updating user"));

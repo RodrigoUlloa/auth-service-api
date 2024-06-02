@@ -1,4 +1,4 @@
-package entitites;
+package com.example.userserviceapi.common.entitites;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,7 +12,7 @@ import lombok.*;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long userId;
     private String email;
     private String password;
